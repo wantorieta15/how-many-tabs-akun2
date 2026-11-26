@@ -18,7 +18,9 @@ hidup orang yang menutup semuanya begitu selesai.
 
 `main.py` (pure stdlib, deterministik, tanpa network) menulis satu angka
 saja — `5` — ke `/output/entry.txt`, tanpa kata, tanpa penjelasan, tanpa
-trailing newline.
+trailing newline. Sebelum menulis, `validate_entry()` memeriksa entri:
+tepat satu baris, tanpa newline, dan sha256 harus sama dengan hash yang
+diharapkan untuk `"5"`.
 
 ```sh
 python3 main.py
